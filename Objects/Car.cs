@@ -23,6 +23,7 @@ namespace VilEbyCorp.CarDealership.Objects
       SetPrice(price);
       SetCounter();
       _instances.Add(this);
+
     }
 
     public void SetMakeModel(string newMakeModel)
@@ -77,16 +78,21 @@ namespace VilEbyCorp.CarDealership.Objects
 
     public static List<Car> GetAll()
     {
+      _instances.TrimExcess();
       return _instances;
     }
 
     public void SetCounter()
     {
-      _id = GetCounter();
       _counter++;
     }
 
-    public int GetId(){
+    public void SetID()
+    {
+      _id = _counter;
+    }
+
+    public int GetId() {
       return _id;
     }
 

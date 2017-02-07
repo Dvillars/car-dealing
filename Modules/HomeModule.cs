@@ -37,7 +37,7 @@ namespace VilEbyCorp.CarDealership
         Car.PurchaseCar(carIndex);
 
         List<Car> carList = Car.GetAll();
-        return View["added-car.cshtml", carList];
+        return View["delete-car.cshtml", carList];
       };
     }
   }
